@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2022-07-28T02:07:16.043435+00:00",
+  "timestamp": "2022-08-11T01:55:21.539442+00:00",
   "repo": "ietf-wg-httpapi/rfc7807bis",
   "labels": [
     {
@@ -2369,7 +2369,7 @@
       "labels": [],
       "body": "Please see https://mailarchive.ietf.org/arch/msg/httpapi/VlX_Excs5jhWsnxgZxZkwOOrx_E/\r\n\r\n    This is a two-week Working Group Last Call. If you have objections or\r\n    concerns about this document, please post them by the end of the month. \r\n    Thank you.\r\n",
       "createdAt": "2022-06-16T17:16:27Z",
-      "updatedAt": "2022-07-26T07:52:09Z",
+      "updatedAt": "2022-08-10T07:25:55Z",
       "closedAt": "2022-07-19T20:04:11Z",
       "comments": [
         {
@@ -2385,6 +2385,34 @@
           "body": "Dear chairs @darrelmiller @richsalz, I have a request to add an informal section to the spec to have #10 resolved. It should not be a large change; as it is only an informative section, it should also not be controversial. I have been inhibited from working on a PR due to a rather exhausting parental leave, but I'm finally easing back to work so I now have some time on my hands and the ability to contribute. I'll get to work on the PR and hope you'll accept it although the two-week last call is long surpassed. \ud83d\ude4f\ud83c\udffc ",
           "createdAt": "2022-07-26T07:44:54Z",
           "updatedAt": "2022-07-26T07:52:09Z"
+        },
+        {
+          "author": "darrelmiller",
+          "authorAssociation": "NONE",
+          "body": "@asbjornu Thank you for this contribution.  Can you help me understand why it is valuable to add a description of how JSON-LD users should use http-problem into the http-problem specification?  Wouldn't it be a more scalable solution to document in JSON-LD documentation how http-problem can be used?  What about how http-problem can be used in JSON:API, OData, gRPC, GraphQL,etc?  Documenting how to use JSON-LD in the http-problem specification feels inverted to how this should actually be done.  ",
+          "createdAt": "2022-08-09T13:52:27Z",
+          "updatedAt": "2022-08-09T13:52:27Z"
+        },
+        {
+          "author": "asbjornu",
+          "authorAssociation": "CONTRIBUTOR",
+          "body": "If this was only about documenting usage, I would completely agree, @darrelmiller. But this is also about establishing a shared vocabulary, such that all JSON-LD-capable consumers of rfc7807bis interpret it in the same way. None of the formats or protocols you mention have a concept of shared vocabulary or namespace, and as such, they are not affected by this issue.\r\n\r\nNot defining the shared vocabulary within rfc7807bis is like RFC 4287 not defining its own namespace URI to be `http://www.w3.org/2005/Atom`, but instead, leaving that part up to every producer and consumer of Atom. Needless to say, that would have caused a lot of compatibility issues with Atom implementations, where I suppose some namespace URIs would become de facto standards every consumer would have to support. However, since RFC 4287 does define its own namespace URI, that whole compatibility conundrum is avoided.\r\n\r\nWhat is needed in rfc7807bis to establish this shared vocabulary is just to mint a URI. That's it. We've explored many different options (URNs, URIs, URLs), but IETF does not have a procedure to mint URIs meant for such namespace-like usage and to have W3C mint such a URL for us (like they did for Atom) seems like a difficult task. I have no contacts in W3C to ask, at least.",
+          "createdAt": "2022-08-09T21:11:25Z",
+          "updatedAt": "2022-08-09T21:12:21Z"
+        },
+        {
+          "author": "mnot",
+          "authorAssociation": "MEMBER",
+          "body": "Hey @asbjornu. When we discussed this at IETF114, concern was expressed that we might not get it right, because we don't have broad expertise in JSON-LD, and also that baking it into an immutable RFC doesn't allow for easy adjustment later. \r\n\r\nGiven that, I think the relevant question is why it's important to establish a shared vocabulary in _this_ document -- keeping in mind that most users of this document will _not_ be using JSON-LD (unlike your example of the Atom namespace).",
+          "createdAt": "2022-08-10T02:16:02Z",
+          "updatedAt": "2022-08-10T02:16:02Z"
+        },
+        {
+          "author": "dret",
+          "authorAssociation": "COLLABORATOR",
+          "body": "On 2022-08-10 04:16, Mark Nottingham wrote:\n> Given that, I think the relevant question is why it's important to \n> establish a shared vocabulary in /this/ document -- keeping in mind that \n> most users of this document will /not/ be using JSON-LD (unlike your \n> example of the Atom namespace).\n\nit just seems like an odd thing to give a non-normative JSON-LD context. \nif it's non-normative, it's simply showing how to use JSON-LD and that \nseems to be something that applies to any JSON out there.\n\nin my mind, to make sense this would need to be a normative context so \nthat the RDF community would have a model to represent problem reports. \nfor that it seems like it would make more sense for the RDF community to \nwork on such a vocabulary, publish it, and then provide a JSON-LD with it.\n",
+          "createdAt": "2022-08-10T07:25:55Z",
+          "updatedAt": "2022-08-10T07:25:55Z"
         }
       ]
     }
@@ -4530,7 +4558,7 @@
       "labels": [],
       "body": "Resolves #10. Awaits approval by chairs (see https://github.com/ietf-wg-httpapi/rfc7807bis/issues/46#issuecomment-1195126352).",
       "createdAt": "2022-07-26T10:14:31Z",
-      "updatedAt": "2022-07-27T08:41:36Z",
+      "updatedAt": "2022-08-10T02:14:51Z",
       "baseRepository": "ietf-wg-httpapi/rfc7807bis",
       "baseRefName": "main",
       "baseRefOid": "6f563e11374b7a6a9e9dd9ace27fb7ef853b778b",
@@ -4562,6 +4590,13 @@
           "body": "On 2022-07-26 17:25, Asbj\u00f8rn Ulsberg wrote:\n> @dret <https://github.com/dret>, the URN will change \u2013\u00a0at least once the \n> RFC number of rfc7807bis is minted, if we agree that we should use \n> rfc7807bis as the namespace provider for |status|. Referencing RFC 9110 \n> would be easier, since it has a final RFC number minted already.\n\nneither of those make any claims or statements about their concepts \nbeing identified through URNs. that's quite an assumption to make, in my \nmind.\n\n> Is it a requirement that an RFC defines a URN for \"itself\" in order for \n> other specifications to reference it? If we go with rfc7807bis, we can \n> define the URN |urn:rfc:7807bis| within the scope of the spec itself. \n> For RFC 9110, we have no such flexibility, so if the URN needs to be \n> predefined, we can't use it.\n\nof course nobody can keep third parties from inventing any identifier \nthat they want (assuming they're ok with those being private identifiers \nand not claiming any authority to mint public ones). it's a bit \ndifferent when we add those to a specification itself, in my mind.\n",
           "createdAt": "2022-07-26T15:33:35Z",
           "updatedAt": "2022-07-26T15:33:35Z"
+        },
+        {
+          "author": "darrelmiller",
+          "authorAssociation": "NONE",
+          "body": "I added a comment here https://github.com/ietf-wg-httpapi/rfc7807bis/issues/46#issuecomment-1195126352  This content feels like it is in the wrong place to me.",
+          "createdAt": "2022-08-09T13:54:24Z",
+          "updatedAt": "2022-08-09T13:54:24Z"
         }
       ],
       "reviews": [
@@ -4802,6 +4837,86 @@
               "body": "So the `urn:rfc:` namespace only allows a number at the end and nothing more? How inflexible, inconvenient and unnecessary. \u2639\ufe0f This means that @dret's suggestion to use `urn:rfc:nnnn` in https://github.com/ietf-wg-httpapi/rfc7807bis/issues/10#issuecomment-851529341 was a misdirection, really. The way JSON-LD and RDF works is that every term has its own canonical URI, prefixed with the URI of the vocabulary. That means if we use `urn:rfc:7807bis` as our vocabulary URI as @dret suggested, the full URI of all terms within the vocabulary will be `urn:rfc:7807bis<term>` or `urn:rfc:7807bisstatus` for `status`, unless we map each term individually (as I've suggested).\r\n\r\nUsing the `rfc` URN seems out of the question, then. All the more reason for me to dislike them. \ud83d\ude05 So we would need an HTTP URI. As @tpluscode mentions, we could use the Hydra NS URI, but I agree with him that it feels wrong to rely on Hydra for this. However, rfc7807bis defines its own header for each member, which may be helpful:\r\n\r\nhttps://github.com/ietf-wg-httpapi/rfc7807bis/blob/6f563e11374b7a6a9e9dd9ace27fb7ef853b778b/draft-ietf-httpapi-rfc7807bis.md?plain=1#L221\r\n\r\nWith that, perhaps we can do something like `https://www.ietf.org/rfc/rfc7807bis.html#status` (where `rfc7807bis` is replaced by the real RFC number once it's minted)?",
               "createdAt": "2022-07-27T08:41:06Z",
               "updatedAt": "2022-07-27T08:41:36Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOE-NsGs4_ntKf",
+          "commit": {
+            "abbreviatedOid": "3b580d7"
+          },
+          "author": "asbjornu",
+          "authorAssociation": "CONTRIBUTOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2022-08-09T20:56:56Z",
+          "updatedAt": "2022-08-09T20:56:57Z",
+          "comments": [
+            {
+              "originalPosition": 42,
+              "body": "Hm. I'm not sure how to explain it otherwise. For clients and developers of clients that has no idea what JSON-LD is, seeing a `\"@context\"` property within an `application/problem+json` response would be confusing, as that is not a property defined by rfc7807bis.\r\n\r\nTo avoid this confusion, we can thus recommend that producers of `application/problem+json` responses that are going to be consumed as JSON-LD by some (but not all) clients, to  add a `Link` header to the response rather than a `\"@context\"` property within the JSON body.",
+              "createdAt": "2022-08-09T20:56:56Z",
+              "updatedAt": "2022-08-09T20:56:57Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOE-NsGs4_ntaO",
+          "commit": {
+            "abbreviatedOid": "3b580d7"
+          },
+          "author": "asbjornu",
+          "authorAssociation": "CONTRIBUTOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2022-08-09T20:57:51Z",
+          "updatedAt": "2022-08-09T20:57:52Z",
+          "comments": [
+            {
+              "originalPosition": 30,
+              "body": "Can you please respond to the idea of using `https://www.ietf.org/rfc/rfc7807bis.html#status` as the URI for the `status` field, @mnot?",
+              "createdAt": "2022-08-09T20:57:51Z",
+              "updatedAt": "2022-08-09T20:57:52Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOE-NsGs4_obyG",
+          "commit": {
+            "abbreviatedOid": "3b580d7"
+          },
+          "author": "mnot",
+          "authorAssociation": "MEMBER",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2022-08-10T02:02:43Z",
+          "updatedAt": "2022-08-10T02:02:44Z",
+          "comments": [
+            {
+              "originalPosition": 42,
+              "body": "That's helpful, thanks. To try to restate (tell me if I'm successful or not), you want to establish a best practice for people who want to use JSON-LD with problem types that they don't control, in a way that doesn't interfere with their consumption.\r\n\r\nIf so, that seems like a reasonable approach. However, I still don't believe it's necessary or helpful to document it in _this_ specification. More discussion in #46. ",
+              "createdAt": "2022-08-10T02:02:43Z",
+              "updatedAt": "2022-08-10T02:02:44Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOE-NsGs4_odO6",
+          "commit": {
+            "abbreviatedOid": "3b580d7"
+          },
+          "author": "mnot",
+          "authorAssociation": "MEMBER",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2022-08-10T02:14:51Z",
+          "updatedAt": "2022-08-10T02:14:51Z",
+          "comments": [
+            {
+              "originalPosition": 30,
+              "body": "There are no firm guarantees about the stability of those URIs; even RFC-editor.org lacks a URL stability policy (although I suspect they'd be unlikely to change).\r\n\r\nThe closest option right now is the [IETF registered protocol parameters IETF sub-namespace](https://www.rfc-editor.org/rfc/rfc3553), but 'status' isn't so much a protocol parameter as it is a concept in the protocol -- i.e., it's not _registered_, like that approach requires.\r\n\r\nSo I'd use a URL elsewhere that has a good stability policy -- e.g., at the W3C.",
+              "createdAt": "2022-08-10T02:14:51Z",
+              "updatedAt": "2022-08-10T02:14:51Z"
             }
           ]
         }
