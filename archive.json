@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2022-08-11T01:55:21.539442+00:00",
+  "timestamp": "2022-08-14T02:12:38.540414+00:00",
   "repo": "ietf-wg-httpapi/rfc7807bis",
   "labels": [
     {
@@ -2369,7 +2369,7 @@
       "labels": [],
       "body": "Please see https://mailarchive.ietf.org/arch/msg/httpapi/VlX_Excs5jhWsnxgZxZkwOOrx_E/\r\n\r\n    This is a two-week Working Group Last Call. If you have objections or\r\n    concerns about this document, please post them by the end of the month. \r\n    Thank you.\r\n",
       "createdAt": "2022-06-16T17:16:27Z",
-      "updatedAt": "2022-08-10T07:25:55Z",
+      "updatedAt": "2022-08-11T23:08:53Z",
       "closedAt": "2022-07-19T20:04:11Z",
       "comments": [
         {
@@ -2413,6 +2413,13 @@
           "body": "On 2022-08-10 04:16, Mark Nottingham wrote:\n> Given that, I think the relevant question is why it's important to \n> establish a shared vocabulary in /this/ document -- keeping in mind that \n> most users of this document will /not/ be using JSON-LD (unlike your \n> example of the Atom namespace).\n\nit just seems like an odd thing to give a non-normative JSON-LD context. \nif it's non-normative, it's simply showing how to use JSON-LD and that \nseems to be something that applies to any JSON out there.\n\nin my mind, to make sense this would need to be a normative context so \nthat the RDF community would have a model to represent problem reports. \nfor that it seems like it would make more sense for the RDF community to \nwork on such a vocabulary, publish it, and then provide a JSON-LD with it.\n",
           "createdAt": "2022-08-10T07:25:55Z",
           "updatedAt": "2022-08-10T07:25:55Z"
+        },
+        {
+          "author": "asbjornu",
+          "authorAssociation": "CONTRIBUTOR",
+          "body": "> Given that, I think the relevant question is why it's important to establish a shared vocabulary in _this_ document -- keeping in mind that most users of this document will _not_ be using JSON-LD (unlike your example of the Atom namespace).\r\n\r\nOk, please allow me to explore a thought experiment. A lot of XML was and is consumed without any care for XML namespaces. For those XML processors, it wouldn't matter whether RFC 4287 declared an official namespace URI or not. Authors of these processors could even argue that it's not their problem that someone wants to burden their simple XML processors with XMLNS and that those who want to process XML with namespaces should do so by minting their own namespace URI outside the scope of RFC 4287.\r\n\r\nNow, which would you say is the natural authority to assume the task of registering a namespace URI for RFC 4287? How do you ensure there's no fragmentation? That everyone that wants to consume Atom with XMLNS uses the same URI?\r\n\r\nI don't think those questions have clear or good answers if RFC 4287 did not mint its own XMLNS and I think the same applies to rfc8707bis if it doesn't mint its own URI. I would even be happy about leaving JSON-LD in the dust and for the JSON-LD community to figure out and just having rfc8707bis declare something like:\r\n\r\n> For applications that require Problem Details for HTTP to be identified by a URI, the following can be used:\r\n> `https://example.com/ns/problem#`\r\n\r\n",
+          "createdAt": "2022-08-11T23:08:53Z",
+          "updatedAt": "2022-08-11T23:08:53Z"
         }
       ]
     }
@@ -4558,7 +4565,7 @@
       "labels": [],
       "body": "Resolves #10. Awaits approval by chairs (see https://github.com/ietf-wg-httpapi/rfc7807bis/issues/46#issuecomment-1195126352).",
       "createdAt": "2022-07-26T10:14:31Z",
-      "updatedAt": "2022-08-10T02:14:51Z",
+      "updatedAt": "2022-08-12T22:17:10Z",
       "baseRepository": "ietf-wg-httpapi/rfc7807bis",
       "baseRefName": "main",
       "baseRefOid": "6f563e11374b7a6a9e9dd9ace27fb7ef853b778b",
@@ -4917,6 +4924,66 @@
               "body": "There are no firm guarantees about the stability of those URIs; even RFC-editor.org lacks a URL stability policy (although I suspect they'd be unlikely to change).\r\n\r\nThe closest option right now is the [IETF registered protocol parameters IETF sub-namespace](https://www.rfc-editor.org/rfc/rfc3553), but 'status' isn't so much a protocol parameter as it is a concept in the protocol -- i.e., it's not _registered_, like that approach requires.\r\n\r\nSo I'd use a URL elsewhere that has a good stability policy -- e.g., at the W3C.",
               "createdAt": "2022-08-10T02:14:51Z",
               "updatedAt": "2022-08-10T02:14:51Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOE-NsGs4_zb62",
+          "commit": {
+            "abbreviatedOid": "3b580d7"
+          },
+          "author": "asbjornu",
+          "authorAssociation": "CONTRIBUTOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2022-08-11T22:56:10Z",
+          "updatedAt": "2022-08-11T22:56:10Z",
+          "comments": [
+            {
+              "originalPosition": 30,
+              "body": "If we somehow registered `status` as a \"protocol parameter\", could we use something like `urn:ietf:params:problem:status`?",
+              "createdAt": "2022-08-11T22:56:10Z",
+              "updatedAt": "2022-08-11T22:56:10Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOE-NsGs4_z2XQ",
+          "commit": {
+            "abbreviatedOid": "3b580d7"
+          },
+          "author": "mnot",
+          "authorAssociation": "MEMBER",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2022-08-12T03:21:34Z",
+          "updatedAt": "2022-08-12T03:21:35Z",
+          "comments": [
+            {
+              "originalPosition": 30,
+              "body": "That's not a registered protocol parameter.",
+              "createdAt": "2022-08-12T03:21:35Z",
+              "updatedAt": "2022-08-12T03:21:35Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOE-NsGs4_4qCu",
+          "commit": {
+            "abbreviatedOid": "3b580d7"
+          },
+          "author": "asbjornu",
+          "authorAssociation": "CONTRIBUTOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2022-08-12T22:17:10Z",
+          "updatedAt": "2022-08-12T22:17:10Z",
+          "comments": [
+            {
+              "originalPosition": 30,
+              "body": "I know it isn't. Is it too much of a stretch to register it as one?",
+              "createdAt": "2022-08-12T22:17:10Z",
+              "updatedAt": "2022-08-12T22:17:10Z"
             }
           ]
         }
