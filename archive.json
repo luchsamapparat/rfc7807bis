@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2022-08-14T02:12:38.540414+00:00",
+  "timestamp": "2022-08-21T02:07:37.248117+00:00",
   "repo": "ietf-wg-httpapi/rfc7807bis",
   "labels": [
     {
@@ -2369,7 +2369,7 @@
       "labels": [],
       "body": "Please see https://mailarchive.ietf.org/arch/msg/httpapi/VlX_Excs5jhWsnxgZxZkwOOrx_E/\r\n\r\n    This is a two-week Working Group Last Call. If you have objections or\r\n    concerns about this document, please post them by the end of the month. \r\n    Thank you.\r\n",
       "createdAt": "2022-06-16T17:16:27Z",
-      "updatedAt": "2022-08-11T23:08:53Z",
+      "updatedAt": "2022-08-19T14:12:41Z",
       "closedAt": "2022-07-19T20:04:11Z",
       "comments": [
         {
@@ -2420,6 +2420,20 @@
           "body": "> Given that, I think the relevant question is why it's important to establish a shared vocabulary in _this_ document -- keeping in mind that most users of this document will _not_ be using JSON-LD (unlike your example of the Atom namespace).\r\n\r\nOk, please allow me to explore a thought experiment. A lot of XML was and is consumed without any care for XML namespaces. For those XML processors, it wouldn't matter whether RFC 4287 declared an official namespace URI or not. Authors of these processors could even argue that it's not their problem that someone wants to burden their simple XML processors with XMLNS and that those who want to process XML with namespaces should do so by minting their own namespace URI outside the scope of RFC 4287.\r\n\r\nNow, which would you say is the natural authority to assume the task of registering a namespace URI for RFC 4287? How do you ensure there's no fragmentation? That everyone that wants to consume Atom with XMLNS uses the same URI?\r\n\r\nI don't think those questions have clear or good answers if RFC 4287 did not mint its own XMLNS and I think the same applies to rfc8707bis if it doesn't mint its own URI. I would even be happy about leaving JSON-LD in the dust and for the JSON-LD community to figure out and just having rfc8707bis declare something like:\r\n\r\n> For applications that require Problem Details for HTTP to be identified by a URI, the following can be used:\r\n> `https://example.com/ns/problem#`\r\n\r\n",
           "createdAt": "2022-08-11T23:08:53Z",
           "updatedAt": "2022-08-11T23:08:53Z"
+        },
+        {
+          "author": "darrelmiller",
+          "authorAssociation": "NONE",
+          "body": "@asbjornu The abstract of RFC 4287 says\r\n\r\n> This document specifies Atom, an XML-based Web content and metadata syndication format.\r\n\r\nThe Atom format takes a normative dependency on XML and therefore has an obligation to play by the rules of XML and define an official namespace.\r\n\r\nRFC 7807 says,\r\n> this specification defines simple JSON and XML  document formats and a HTTP field to describe the specifics of problem(s) encountered -- \"problem details\".\r\n\r\nIt doesn't say it is the authoritative source for a JSON-LD format.  I don't think adding a non-normative appendix for JSON-LD is the right solution to the problem as a) it is not authoritative and b) it doesn't scale.",
+          "createdAt": "2022-08-19T14:03:59Z",
+          "updatedAt": "2022-08-19T14:03:59Z"
+        },
+        {
+          "author": "dret",
+          "authorAssociation": "COLLABORATOR",
+          "body": "On 2022-08-19 16:04, Darrel wrote:\n> The Atom format takes a normative dependency on XML and therefore has an \n> obligation to play by the rules of XML and define an official namespace.\n> \n> RFC 7807 says,\n> \n>     this specification defines simple JSON and XML document formats and\n>     a HTTP field to describe the specifics of problem(s) encountered --\n>     \"problem details\".\n> \n> It doesn't say it is the authoritative source for a JSON-LD format. I \n> don't think adding a non-normative appendix for JSON-LD is the right \n> solution to the problem as a) it is not authoritative and b) it doesn't \n> scale.\n\nbecause RFC 7807 does define an XML format it does define a namespace \nfor it.\n\nhttps://www.rfc-editor.org/rfc/rfc7807#appendix-A\n\nbut that's for the XML vocabulary of RFC 7807. there's no mention of \nnamespaces/identifiers for RDF vocabularies in either RFC 4287 or RFC \n7807. both specs are simply not concerned with RDF representations.\n",
+          "createdAt": "2022-08-19T14:12:41Z",
+          "updatedAt": "2022-08-19T14:12:41Z"
         }
       ]
     }
