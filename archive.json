@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2022-08-21T02:07:37.248117+00:00",
+  "timestamp": "2022-08-28T02:31:35.221476+00:00",
   "repo": "ietf-wg-httpapi/rfc7807bis",
   "labels": [
     {
@@ -2369,7 +2369,7 @@
       "labels": [],
       "body": "Please see https://mailarchive.ietf.org/arch/msg/httpapi/VlX_Excs5jhWsnxgZxZkwOOrx_E/\r\n\r\n    This is a two-week Working Group Last Call. If you have objections or\r\n    concerns about this document, please post them by the end of the month. \r\n    Thank you.\r\n",
       "createdAt": "2022-06-16T17:16:27Z",
-      "updatedAt": "2022-08-19T14:12:41Z",
+      "updatedAt": "2022-08-26T10:45:32Z",
       "closedAt": "2022-07-19T20:04:11Z",
       "comments": [
         {
@@ -2434,6 +2434,27 @@
           "body": "On 2022-08-19 16:04, Darrel wrote:\n> The Atom format takes a normative dependency on XML and therefore has an \n> obligation to play by the rules of XML and define an official namespace.\n> \n> RFC 7807 says,\n> \n>     this specification defines simple JSON and XML document formats and\n>     a HTTP field to describe the specifics of problem(s) encountered --\n>     \"problem details\".\n> \n> It doesn't say it is the authoritative source for a JSON-LD format. I \n> don't think adding a non-normative appendix for JSON-LD is the right \n> solution to the problem as a) it is not authoritative and b) it doesn't \n> scale.\n\nbecause RFC 7807 does define an XML format it does define a namespace \nfor it.\n\nhttps://www.rfc-editor.org/rfc/rfc7807#appendix-A\n\nbut that's for the XML vocabulary of RFC 7807. there's no mention of \nnamespaces/identifiers for RDF vocabularies in either RFC 4287 or RFC \n7807. both specs are simply not concerned with RDF representations.\n",
           "createdAt": "2022-08-19T14:12:41Z",
           "updatedAt": "2022-08-19T14:12:41Z"
+        },
+        {
+          "author": "asbjornu",
+          "authorAssociation": "CONTRIBUTOR",
+          "body": "@darrelmiller:\r\n\r\n> The Atom format takes a normative dependency on XML and therefore has an obligation to play by the rules of XML and define an official namespace.\r\n\r\nNamespaces are an optional addition to XML. Swathes of XML doesn't contain a single `xmlns` attribute and there are a plethora of XML processors that don't grok namespaces at all. XML existed for a year before XMLNS was a thing and it took a while before the most widespread processors caught on to it. Although it was considered good (perhaps even best) practice, there was afaik nothing that forced us to mint a namespace for Atom when we developed it.\r\n\r\n> It doesn't say it is the authoritative source for a JSON-LD format. I don't think adding a non-normative appendix for JSON-LD is the right solution to the problem as a) it is not authoritative and b) it doesn't scale.\r\n\r\nI can come to terms with that if you please consider what I suggested in https://github.com/ietf-wg-httpapi/rfc7807bis/issues/46#issuecomment-1212578885:\r\n\r\n> I would even be happy about leaving JSON-LD in the dust and for the JSON-LD community to figure out and just having rfc8707bis declare something like:\r\n> \r\n> > For applications that require Problem Details for HTTP to be identified by a URI, the following can be used:\r\n> > `https://example.com/ns/problem#`\r\n\r\n@dret:\r\n\r\n> because RFC 7807 does define an XML format it does define a namespace for it. \r\n> https://www.rfc-editor.org/rfc/rfc7807#appendix-A\r\n\r\nIndeed, but as we've discussed `urn:ietf:rfc:7807` is not extensible. It is impossible for a JSON-LD context to state that `status` is `urn:ietf:rfc:7807:status` or `urn:ietf:rfc:7807#status` for instance.\r\n\r\n> there's no mention of namespaces/identifiers for RDF vocabularies in either RFC 4287 or RFC 7807. both specs are simply not concerned with RDF representations.\r\n\r\nNor does rfc7807bis have to be, either. It just needs to provide an extensible URI that JSON-LD and XML consumers can use to say \"this is the authoritative URI that represents rfc7807bis\". Is it nothing we can do about the `urn:ietf:rfc:7807` URI to allow this sort of extensibility?",
+          "createdAt": "2022-08-25T21:21:39Z",
+          "updatedAt": "2022-08-25T21:21:39Z"
+        },
+        {
+          "author": "dret",
+          "authorAssociation": "COLLABORATOR",
+          "body": "On 2022-08-25 23:21, Asbj\u00f8rn Ulsberg wrote:\n> Indeed, but as we've discussed |urn:ietf:rfc:7807| is not extensible. It \n> is impossible for a JSON-LD context to state that |status| is \n> |urn:ietf:rfc:7807:status| or |urn:ietf:rfc:7807#status| for instance.\n\nthat URI is the XML namespace URI and was never intended or never \nclaimed to be more than that.\n\n> Nor does rfc7807bis have to be, either. It just needs to provide an \n> extensible URI that JSON-LD and XML consumers can use to say \"this is \n> the authoritative URI that represents rfc7807bis\". Is it nothing we can \n> do about the |urn:ietf:rfc:7807| URI to allow this sort of extensibility?\n\nthat ship sailed six years ago with RFC 7807. since our explicit goal is \nto not break things, changing the XML namespace URI is not an option.\n",
+          "createdAt": "2022-08-26T06:25:33Z",
+          "updatedAt": "2022-08-26T06:25:33Z"
+        },
+        {
+          "author": "asbjornu",
+          "authorAssociation": "CONTRIBUTOR",
+          "body": "> that ship sailed six years ago with RFC 7807. since our explicit goal is to not break things, changing the XML namespace URI is not an option.\r\n\r\nI'm not asking to change the XML namespace URI (in the XML context), I'm asking to reuse and expand it in other contexts. The fact that JSON-LD expands `status` to `urn:ietf:rfc:7807:status` is not going to affect the XML serialization or processing of rfc7807bis.",
+          "createdAt": "2022-08-26T10:45:32Z",
+          "updatedAt": "2022-08-26T10:45:32Z"
         }
       ]
     }
