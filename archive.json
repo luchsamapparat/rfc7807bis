@@ -1,17 +1,17 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2022-08-28T02:31:35.221476+00:00",
+  "timestamp": "2022-09-06T02:33:34.006683+00:00",
   "repo": "ietf-wg-httpapi/rfc7807bis",
   "labels": [
-    {
-      "name": "editorial",
-      "description": "",
-      "color": "0E8A16"
-    },
     {
       "name": "duplicate",
       "description": "This issue or pull request already exists",
       "color": "cfd3d7"
+    },
+    {
+      "name": "editorial",
+      "description": "",
+      "color": "0E8A16"
     }
   ],
   "issues": [
@@ -2455,6 +2455,118 @@
           "body": "> that ship sailed six years ago with RFC 7807. since our explicit goal is to not break things, changing the XML namespace URI is not an option.\r\n\r\nI'm not asking to change the XML namespace URI (in the XML context), I'm asking to reuse and expand it in other contexts. The fact that JSON-LD expands `status` to `urn:ietf:rfc:7807:status` is not going to affect the XML serialization or processing of rfc7807bis.",
           "createdAt": "2022-08-26T10:45:32Z",
           "updatedAt": "2022-08-26T10:45:32Z"
+        }
+      ]
+    },
+    {
+      "number": 49,
+      "id": "I_kwDOE-NsGs5RNXiv",
+      "title": "nit: Normative reference to HTTP spec needs to be updated to latest published document",
+      "url": "https://github.com/ietf-wg-httpapi/rfc7807bis/issues/49",
+      "state": "CLOSED",
+      "author": "darrelmiller",
+      "authorAssociation": "NONE",
+      "assignees": [],
+      "labels": [],
+      "body": "",
+      "createdAt": "2022-09-05T20:47:10Z",
+      "updatedAt": "2022-09-06T00:57:25Z",
+      "closedAt": "2022-09-06T00:57:25Z",
+      "comments": []
+    },
+    {
+      "number": 50,
+      "id": "I_kwDOE-NsGs5RNXk9",
+      "title": "nit: Abstract should mention that this document obsoletes RFC7807",
+      "url": "https://github.com/ietf-wg-httpapi/rfc7807bis/issues/50",
+      "state": "CLOSED",
+      "author": "darrelmiller",
+      "authorAssociation": "NONE",
+      "assignees": [],
+      "labels": [],
+      "body": "",
+      "createdAt": "2022-09-05T20:47:29Z",
+      "updatedAt": "2022-09-06T00:57:25Z",
+      "closedAt": "2022-09-06T00:57:25Z",
+      "comments": []
+    },
+    {
+      "number": 51,
+      "id": "I_kwDOE-NsGs5RNXm7",
+      "title": "nit: A later version of JSON Schema exists for the informative reference.",
+      "url": "https://github.com/ietf-wg-httpapi/rfc7807bis/issues/51",
+      "state": "CLOSED",
+      "author": "darrelmiller",
+      "authorAssociation": "NONE",
+      "assignees": [],
+      "labels": [],
+      "body": "",
+      "createdAt": "2022-09-05T20:47:45Z",
+      "updatedAt": "2022-09-06T00:54:08Z",
+      "closedAt": "2022-09-06T00:54:07Z",
+      "comments": [
+        {
+          "author": "mnot",
+          "authorAssociation": "MEMBER",
+          "body": "will automagically be updated on publication.",
+          "createdAt": "2022-09-06T00:54:07Z",
+          "updatedAt": "2022-09-06T00:54:07Z"
+        }
+      ]
+    },
+    {
+      "number": 52,
+      "id": "I_kwDOE-NsGs5RNXp-",
+      "title": "nit: Introduction should briefly explain what has changed from 7807 and why",
+      "url": "https://github.com/ietf-wg-httpapi/rfc7807bis/issues/52",
+      "state": "CLOSED",
+      "author": "darrelmiller",
+      "authorAssociation": "NONE",
+      "assignees": [],
+      "labels": [],
+      "body": "",
+      "createdAt": "2022-09-05T20:48:10Z",
+      "updatedAt": "2022-09-06T01:06:13Z",
+      "closedAt": "2022-09-06T01:06:13Z",
+      "comments": []
+    },
+    {
+      "number": 53,
+      "id": "I_kwDOE-NsGs5RNXr2",
+      "title": "nit: Summary of Changes section should provide greater detail on the motivation and changes",
+      "url": "https://github.com/ietf-wg-httpapi/rfc7807bis/issues/53",
+      "state": "CLOSED",
+      "author": "darrelmiller",
+      "authorAssociation": "NONE",
+      "assignees": [],
+      "labels": [],
+      "body": "",
+      "createdAt": "2022-09-05T20:48:25Z",
+      "updatedAt": "2022-09-06T01:06:13Z",
+      "closedAt": "2022-09-06T01:06:13Z",
+      "comments": []
+    },
+    {
+      "number": 54,
+      "id": "I_kwDOE-NsGs5RNXz9",
+      "title": "Errata 5515: Clarification of meaning when type member is null",
+      "url": "https://github.com/ietf-wg-httpapi/rfc7807bis/issues/54",
+      "state": "CLOSED",
+      "author": "darrelmiller",
+      "authorAssociation": "NONE",
+      "assignees": [],
+      "labels": [],
+      "body": "Errata 5515\r\nhttps://www.rfc-editor.org/errata/eid5515 should be addressed",
+      "createdAt": "2022-09-05T20:49:36Z",
+      "updatedAt": "2022-09-06T00:57:08Z",
+      "closedAt": "2022-09-06T00:57:08Z",
+      "comments": [
+        {
+          "author": "mnot",
+          "authorAssociation": "MEMBER",
+          "body": "Null isn't allowed as a value of `type`; this errata is not valid.",
+          "createdAt": "2022-09-06T00:57:08Z",
+          "updatedAt": "2022-09-06T00:57:08Z"
         }
       ]
     }
