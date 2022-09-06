@@ -1226,10 +1226,13 @@ svg :is([stroke="fill"], [fill^="#fff"]) {
             <p id="section-toc.1-1.11.1"><a href="#appendix-C" class="xref">Appendix C</a>.  <a href="#name-using-problem-details-with-" class="xref">Using Problem Details with Other Formats</a></p>
 </li>
           <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.12">
-            <p id="section-toc.1-1.12.1"><a href="#appendix-D" class="xref"></a><a href="#name-acknowledgements" class="xref">Acknowledgements</a></p>
+            <p id="section-toc.1-1.12.1"><a href="#appendix-D" class="xref">Appendix D</a>.  <a href="#name-changes-from-rfc7807" class="xref">Changes from RFC7807</a></p>
 </li>
           <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.13">
-            <p id="section-toc.1-1.13.1"><a href="#appendix-E" class="xref"></a><a href="#name-authors-addresses" class="xref">Authors' Addresses</a></p>
+            <p id="section-toc.1-1.13.1"><a href="#appendix-E" class="xref"></a><a href="#name-acknowledgements" class="xref">Acknowledgements</a></p>
+</li>
+          <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.14">
+            <p id="section-toc.1-1.14.1"><a href="#appendix-F" class="xref"></a><a href="#name-authors-addresses" class="xref">Authors' Addresses</a></p>
 </li>
         </ul>
 </nav>
@@ -1248,6 +1251,7 @@ svg :is([stroke="fill"], [fill^="#fff"]) {
 <p id="section-1-6">The data model for problem details is a JSON <span>[<a href="#JSON" class="xref">JSON</a>]</span> object; when serialized as a JSON document, it uses the "application/problem+json" media type. <a href="#xml-syntax" class="xref">Appendix B</a> defines an equivalent XML format, which uses the "application/problem+xml" media type.<a href="#section-1-6" class="pilcrow">¶</a></p>
 <p id="section-1-7">Note that problem details are (naturally) not the only way to convey the details of a problem in HTTP. If the response is still a representation of a resource, for example, it's often preferable to describe the relevant details in that application's format. Likewise, defined HTTP status codes cover many situations with no need to convey extra detail.<a href="#section-1-7" class="pilcrow">¶</a></p>
 <p id="section-1-8">This specification's aim is to define common error formats for applications that need one so that they aren't required to define their own, or worse, tempted to redefine the semantics of existing HTTP status codes. Even if an application chooses not to use it to convey errors, reviewing its design can help guide the design decisions faced when conveying errors in an existing format.<a href="#section-1-8" class="pilcrow">¶</a></p>
+<p id="section-1-9">See <a href="#changes" class="xref">Appendix D</a> for a list of changes from RFC7807.<a href="#section-1-9" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="notational-conventions">
@@ -1817,12 +1821,37 @@ Content-Language: en
 <p id="appendix-C-6">This specification does not make specific recommendations regarding embedding problem details in other formats; the appropriate way to embed them depends both upon the format in use and application of that format.<a href="#appendix-C-6" class="pilcrow">¶</a></p>
 </section>
 </div>
-<div id="acknowledgements">
+<div id="changes">
 <section id="appendix-D">
+      <h2 id="name-changes-from-rfc7807">
+<a href="#appendix-D" class="section-number selfRef">Appendix D. </a><a href="#name-changes-from-rfc7807" class="section-name selfRef">Changes from RFC7807</a>
+      </h2>
+<p id="appendix-D-1">This revision has made the following changes:<a href="#appendix-D-1" class="pilcrow">¶</a></p>
+<ul class="normal">
+<li class="normal" id="appendix-D-2.1">
+          <a href="#registry" class="xref">Section 5.2</a> introduces a registry of common problem type URIs<a href="#appendix-D-2.1" class="pilcrow">¶</a>
+</li>
+        <li class="normal" id="appendix-D-2.2">
+          <a href="#problem-json" class="xref">Section 3</a> clarifies how multiple problems should be treated<a href="#appendix-D-2.2" class="pilcrow">¶</a>
+</li>
+        <li class="normal" id="appendix-D-2.3">
+          <a href="#extension" class="xref">Section 3.2</a> reserves a prefix for future standards-defined object members<a href="#appendix-D-2.3" class="pilcrow">¶</a>
+</li>
+        <li class="normal" id="appendix-D-2.4">
+          <a href="#type" class="xref">Section 3.1.1</a> provides guidance for using type URIs that cannot be dereferenced<a href="#appendix-D-2.4" class="pilcrow">¶</a>
+</li>
+        <li class="normal" id="appendix-D-2.5">
+          <a href="#field" class="xref">Section 4</a> allows problem details to be communicate in a HTTP header or trailer field<a href="#appendix-D-2.5" class="pilcrow">¶</a>
+</li>
+      </ul>
+</section>
+</div>
+<div id="acknowledgements">
+<section id="appendix-E">
       <h2 id="name-acknowledgements">
 <a href="#name-acknowledgements" class="section-name selfRef">Acknowledgements</a>
       </h2>
-<p id="appendix-D-1">The authors would like to thank
+<p id="appendix-E-1">The authors would like to thank
 Jan Algermissen,
 Subbu Allamaraju,
 Mike Amundsen,
@@ -1832,11 +1861,11 @@ Sam Johnston,
 Mike McCall,
 Julian Reschke, and
 James Snell
-for review of this specification.<a href="#appendix-D-1" class="pilcrow">¶</a></p>
+for review of this specification.<a href="#appendix-E-1" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="authors-addresses">
-<section id="appendix-E">
+<section id="appendix-F">
       <h2 id="name-authors-addresses">
 <a href="#name-authors-addresses" class="section-name selfRef">Authors' Addresses</a>
       </h2>

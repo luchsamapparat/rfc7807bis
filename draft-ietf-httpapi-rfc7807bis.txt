@@ -84,6 +84,7 @@ Table of Contents
    Appendix A.  JSON Schema for HTTP Problems
    Appendix B.  HTTP Problems and XML
    Appendix C.  Using Problem Details with Other Formats
+   Appendix D.  Changes from RFC7807
    Acknowledgements
    Authors' Addresses
 
@@ -138,6 +139,8 @@ Table of Contents
    HTTP status codes.  Even if an application chooses not to use it to
    convey errors, reviewing its design can help guide the design
    decisions faced when conveying errors in an existing format.
+
+   See Appendix D for a list of changes from RFC7807.
 
 2.  Notational Conventions
 
@@ -871,6 +874,23 @@ Appendix C.  Using Problem Details with Other Formats
    embedding problem details in other formats; the appropriate way to
    embed them depends both upon the format in use and application of
    that format.
+
+Appendix D.  Changes from RFC7807
+
+   This revision has made the following changes:
+
+   *  Section 5.2 introduces a registry of common problem type URIs
+
+   *  Section 3 clarifies how multiple problems should be treated
+
+   *  Section 3.2 reserves a prefix for future standards-defined object
+      members
+
+   *  Section 3.1.1 provides guidance for using type URIs that cannot be
+      dereferenced
+
+   *  Section 4 allows problem details to be communicate in a HTTP
+      header or trailer field
 
 Acknowledgements
 
