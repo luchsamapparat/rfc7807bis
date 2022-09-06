@@ -6,8 +6,8 @@ HTTPAPI                                                    M. Nottingham
 Internet-Draft                                                          
 Obsoletes: 7807 (if approved)                                   E. Wilde
 Intended status: Standards Track                                        
-Expires: 5 January 2023                                         S. Dalal
-                                                             4 July 2022
+Expires: 10 March 2023                                          S. Dalal
+                                                        6 September 2022
 
 
                      Problem Details for HTTP APIs
@@ -18,6 +18,8 @@ Abstract
    This document defines a "problem detail" to carry machine-readable
    details of errors in HTTP response content and/or fields to avoid the
    need to define new error response formats for HTTP APIs.
+
+   This document obsoletes RF7807.
 
 Discussion Venues
 
@@ -41,7 +43,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 5 January 2023.
+   This Internet-Draft will expire on 10 March 2023.
 
 Copyright Notice
 
@@ -627,11 +629,10 @@ Table of Contents
               DOI 10.17487/RFC5234, January 2008,
               <https://www.rfc-editor.org/rfc/rfc5234>.
 
-   [HTTP]     Fielding, R. T., Nottingham, M., and J. Reschke, "HTTP
-              Semantics", Work in Progress, Internet-Draft, draft-ietf-
-              httpbis-semantics-19, 12 September 2021,
-              <https://datatracker.ietf.org/doc/html/draft-ietf-httpbis-
-              semantics-19>.
+   [HTTP]     Fielding, R., Ed., Nottingham, M., Ed., and J. Reschke,
+              Ed., "HTTP Semantics", STD 97, RFC 9110,
+              DOI 10.17487/RFC9110, June 2022,
+              <https://www.rfc-editor.org/rfc/rfc9110>.
 
    [JSON]     Bray, T., Ed., "The JavaScript Object Notation (JSON) Data
               Interchange Format", STD 90, RFC 8259,
@@ -662,11 +663,11 @@ Table of Contents
               RFC 3986, DOI 10.17487/RFC3986, January 2005,
               <https://www.rfc-editor.org/rfc/rfc3986>.
 
-   [XML]      Bray, T., Paoli, J., Sperberg-McQueen, M., Maler, E., and
-              F. Yergeau, "Extensible Markup Language (XML) 1.0 (Fifth
-              Edition)", World Wide Web Consortium Recommendation REC-
-              xml-20081126, 26 November 2008,
-              <https://www.w3.org/TR/2008/REC-xml-20081126>.
+   [XML]      Maler, E., Ed., Yergeau, F., Ed., Paoli, J., Ed.,
+              Sperberg-McQueen, M., Ed., and T. Bray, Ed., "Extensible
+              Markup Language (XML) 1.0 (Fifth Edition)", W3C REC REC-
+              xml-20081126, W3C REC-xml-20081126, 26 November 2008,
+              <https://www.w3.org/TR/2008/REC-xml-20081126/>.
 
 8.2.  Informative References
 
@@ -696,10 +697,11 @@ Table of Contents
               10 June 2022, <https://datatracker.ietf.org/doc/html/
               draft-bhutton-json-schema-01>.
 
-   [RDFA]     Adida, B., Birbeck, M., McCarron, S., and I. Herman, "RDFa
-              Core 1.1 - Third Edition", World Wide Web Consortium
-              Recommendation REC-rdfa-core-20150317, 17 March 2015,
-              <https://www.w3.org/TR/2015/REC-rdfa-core-20150317>.
+   [RDFA]     Adida, B., Ed., Herman, I., Ed., Birbeck, M., Ed., and S.
+              McCarron, Ed., "RDFa Core 1.1 - Third Edition", W3C REC 
+              REC-rdfa-core-20150317, W3C REC-rdfa-core-20150317, 17
+              March 2015,
+              <https://www.w3.org/TR/2015/REC-rdfa-core-20150317/>.
 
    [TAG]      Kindberg, T. and S. Hawke, "The 'tag' URI Scheme",
               RFC 4151, DOI 10.17487/RFC4151, October 2005,
@@ -710,11 +712,11 @@ Table of Contents
               DOI 10.17487/RFC8288, October 2017,
               <https://www.rfc-editor.org/rfc/rfc8288>.
 
-   [XSLT]     Clark, J., Pieters, S., and H. Thompson, "Associating
-              Style Sheets with XML documents 1.0 (Second Edition)",
-              World Wide Web Consortium Recommendation REC-xml-
-              stylesheet-20101028, 28 October 2010,
-              <https://www.w3.org/TR/2010/REC-xml-stylesheet-20101028>.
+   [XSLT]     Thompson, H., Ed., Clark, J., Ed., and S. Pieters, Ed.,
+              "Associating Style Sheets with XML documents 1.0 (Second
+              Edition)", W3C REC REC-xml-stylesheet-20101028, W3C REC-
+              xml-stylesheet-20101028, 28 October 2010,
+              <https://www.w3.org/TR/2010/REC-xml-stylesheet-20101028/>.
 
 Appendix A.  JSON Schema for HTTP Problems
 
